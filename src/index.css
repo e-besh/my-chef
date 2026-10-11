@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  /* font-family: sans-serif; */
+}
+.app-wrapper {
+  min-height: 100vh; /* Full viewport height */
+  display: flex; /* Turn on flexbox */
+  flex-direction: column; /* Stack children vertically */
+}
+/* --- NEW: Container to center content and limit width --- */
+.container {
+  max-width: 800px; /* Prevents content from stretching too wide */
+  margin: 0 auto; /* Centers the container horizontally */
+  padding: 0 20px; /* Adds breathing room on small screens */
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 11px;
+  background-color: #fc9629;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+  padding: 15px 0; /* Added padding for better spacing */
+}
+
+/* --- UPDATED: Main now uses padding instead of just top/bottom --- */
+main {
+  padding: 30px 0 10px; /* Removed horizontal padding (container handles it) */
+  flex: 1;
+}
+
+.add-ingredient-form {
+  display: flex;
+  justify-content: center;
+  height: 38px;
+  gap: 11px;
+}
+
+.add-ingredient-form > input {
+  border-radius: 6px;
+  border: 1px solid #f8d9b7;
+  padding: 9px 13px;
+  box-shadow: 0px 1px 2px 0px rgba(233, 175, 88, 0.05);
+  min-width: 150px;
+  max-width: 400px;
+  flex-grow: 1;
+  outline: none;
+}
+
+.add-ingredient-form > button {
+  background-color: #faa64d;
+  border-radius: 6px;
+  border: none;
+  font-family: sans-serif;
+  width: 150px;
+  font-size: 0.875rem;
+  cursor: pointer; /* Added cursor pointer */
+}
+
+.add-ingredient-form > button::before {
+  content: "+";
+  margin-right: 5px;
+}
+
+.add-ingredient-form > button:hover {
+  background-color: #fa8b15;
+}
+
+/* Container for the entire recipe callout banner */
+.get-recipe-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fef6ed;
+  border: 1px solid #f8d9b7;
+  border-radius: 8px;
+  padding: 18px 28px;
+  margin-top: 28px;
+  box-shadow: 0px 2px 4px rgba(233, 175, 88, 0.08);
+  /* Ensure it doesn't get too wide inside the container */
+  width: 100%;
+}
+
+/* Heading: Ready for recipe */
+.get-recipe-container h3 {
+  color: #141413;
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+}
+
+/* Paragraph: Generate a recipe from your list of ingredient */
+.get-recipe-container p {
+  color: #6b6a65;
+  font-size: 0.9rem;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Button aligned to the right */
+.get-recipe-container button {
+  background-color: #f39633;
+  color: #ffffff;
+  margin: 0;
+  border: none;
+  border-radius: 6px;
+  padding: 9px 17px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease;
+}
+
+.chef-recommendation-list {
+  background-color: #fef6ed;
+  border: 1px solid #f8d9b7;
+  padding-left: 10px;
+  padding-top: 15px;
+  border-radius: 5px;
+  /* Ensure it fills the container but doesn't overflow */
+  width: 100%;
+}
+/* footer */
+/* ===== Footer ===== */
+/* ===== Simple Footer ===== */
+.footer {
+  background-color: #fc9629;
+  color: #f1f1f1;
+  padding: 20px;
+  margin-top: 60px;
+  border-top: 3px solid; /* Orange accent line on top */
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: black;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.footer-copy {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #eeebeb;
+}
+
+/* Mobile: stack vertically */
+@media (max-width: 500px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-brand,
+  .footer-links,
+  .footer-social {
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-links ul {
+    align-items: center;
+  }
+}
+.back-to-top {
+  /* --- NEW: Mobile specific adjustments --- */
+  @media (max-width: 600px) {
+    .get-recipe-container {
+      flex-direction: column;
+      text-align: center;
+      gap: 15px;
+      padding: 15px;
+    }
+
+    .get-recipe-container button {
+      width: 100%; /* Full width button on mobile looks better */
+    }
+  }
+}
